@@ -142,7 +142,7 @@ def upload_image(file) -> str | None:
 
     except Exception as exc:
         logger.exception("upload_image 失敗：%s", exc)
-        st.error("沒有開放圖片上傳功能 🏠")
+        st.error("沒有開放圖片上傳功能,不要上傳圖片 🏠")
         #st.error("圖片上傳失敗，請稍後再試 🏠")
         return None
 
