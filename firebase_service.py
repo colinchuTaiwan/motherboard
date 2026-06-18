@@ -26,12 +26,12 @@ from utils import get_client_ip_hash, sanitize_input
 logger = logging.getLogger(__name__)
 
 # Realtime Database 路徑
-_PATH_MESSAGES: str = "homeboard/messages"
-_PATH_ANNOUNCEMENTS: str = "homeboard/announcements"
-_PATH_VISITORS: str = "homeboard/visitor_counts"
+_PATH_MESSAGES: str = "motherboard/messages"
+_PATH_ANNOUNCEMENTS: str = "motherboard/announcements"
+_PATH_VISITORS: str = "motherboard/visitor_counts"
 
 # Storage 圖片存放資料夾
-_STORAGE_IMAGE_FOLDER: str = "homeboard/images"
+_STORAGE_IMAGE_FOLDER: str = "motherboard/images"
 
 # 允許的圖片類型與最大檔案大小（5 MB）
 _ALLOWED_TYPES: set[str] = {"image/jpeg", "image/png", "image/gif", "image/webp"}
@@ -142,7 +142,8 @@ def upload_image(file) -> str | None:
 
     except Exception as exc:
         logger.exception("upload_image 失敗：%s", exc)
-        st.error("圖片上傳失敗，請稍後再試 🏠")
+        st.error("沒有開放圖片上傳功能 🏠")
+        #st.error("圖片上傳失敗，請稍後再試 🏠")
         return None
 
 
